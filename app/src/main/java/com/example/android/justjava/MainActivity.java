@@ -34,8 +34,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void submitOrder(View view) {
-        display(quantity);
-        displayPrice(quantity * 5);
+        String priceMessage ="You owe $" + (quantity * 5) + " dude";
+        displayPrice(priceMessage);
     }
 
     /**
