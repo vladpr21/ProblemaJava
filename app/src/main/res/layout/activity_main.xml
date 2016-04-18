@@ -3,10 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e3357d366c62b49bdb3c0244c0c85299e184e1a1
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+<<<<<<< HEAD
+=======
+=======
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+>>>>>>> 642c69a03d9091457706e155525956334f5cdc3b
+>>>>>>> e3357d366c62b49bdb3c0244c0c85299e184e1a1
     tools:context=".MainActivity">
 
     <TextView
@@ -25,6 +38,13 @@
         android:onClick="decrement"
         android:layout_width="48dp"
         android:layout_height="48dp"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        android:padding="16dp"
+>>>>>>> 642c69a03d9091457706e155525956334f5cdc3b
+>>>>>>> e3357d366c62b49bdb3c0244c0c85299e184e1a1
         android:text="-" />
 
     <TextView
@@ -37,9 +57,22 @@
         android:id="@+id/quantity_text_view"/>
 
     <Button
+<<<<<<< HEAD
         android:onClick="increcrement"
         android:layout_width="48dp"
         android:layout_height="48dp"
+=======
+<<<<<<< HEAD
+        android:onClick="increment"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+=======
+        android:onClick="increcrement"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="16dp"
+>>>>>>> 642c69a03d9091457706e155525956334f5cdc3b
+>>>>>>> e3357d366c62b49bdb3c0244c0c85299e184e1a1
         android:text="+" />
 
     </LinearLayout>
