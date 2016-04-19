@@ -3,6 +3,7 @@ package com.example.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -29,13 +30,17 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void decrement(View view) {
-        quantity = quantity-1;
+       if(quantity>0)
+           quantity = quantity-1;
         display(quantity);
     }
 
     public void submitOrder(View view) {
-        String priceMessage ="You owe $" + (quantity * 5) + " dude";
-        displayPrice(priceMessage);
+        CheckBox whippedCreamCheckBox= (CheckBox) findViewById(R.id.whipped_cream)
+        boolean hasWhippedCream=whippedCreamCheckBox.isChecked();
+        int price=calculatePrice();
+        String message = createOrderSummary(price,hasWhippedCream);
+        displayPrice(message);
     }
 
     /**
@@ -48,9 +53,24 @@ public class MainActivity extends ActionBarActivity {
     }
     /**
      * This method displays the given price on the screen.
+     * @param
      */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    private void displayPrice(String message) {
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
+    }
+    /**
+     * Calculates the price of the order based on the current quantity.
+     *
+     * @return the price
+     */
+    private int calculatePrice() {
+        int price = quantity * 5;
+        return price;
+    }
+
+    private String createOrderSummary(int price, boolean hasWhippedCream){
+        String message = "Name: Vlad\nAdd whipped cream ?" + hasWippedCream + "Quantity: "+ quantity + "\nTotal: $" + price + "\nThank you!";
+        return message;
     }
 }
