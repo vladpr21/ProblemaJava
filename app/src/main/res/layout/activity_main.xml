@@ -9,6 +9,12 @@
     android:paddingTop="16dp"
     tools:context=".MainActivity">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Name"
+        android:id="@+id/your_name" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,6 +29,14 @@
         android:textSize="16sp"
         android:text="Whipped cream"
         android:id="@+id/whipped_cream" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:textSize="16sp"
+        android:text="Chocolate"
+        android:id="@+id/chocolate" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -36,10 +37,15 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void submitOrder(View view) {
-        CheckBox whippedCreamCheckBox= (CheckBox) findViewById(R.id.whipped_cream)
+        EditText nameField=(EditText) findViewById(R.id.your_name);
+        String name=nameField.getText().toString();
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream);
         boolean hasWhippedCream=whippedCreamCheckBox.isChecked();
+        CheckBox ChocolateCreamCheckBox = (CheckBox) findViewById(R.id.chocolate);
+        boolean hasChocolate=ChocolateCreamCheckBox.isChecked();
         int price=calculatePrice();
-        String message = createOrderSummary(price,hasWhippedCream);
+
+        String message= createOrderSummary(price,hasWhippedCream,hasChocolate);
         displayPrice(message);
     }
 
@@ -69,8 +75,9 @@ public class MainActivity extends ActionBarActivity {
         return price;
     }
 
-    private String createOrderSummary(int price, boolean hasWhippedCream){
-        String message = "Name: Vlad\nAdd whipped cream ?" + hasWippedCream + "Quantity: "+ quantity + "\nTotal: $" + price + "\nThank you!";
+    private String createOrderSummary(int price, boolean hasWhippedCream, boolean hasChocolate){
+        String message="Name: Mihnea\nAdd whipped cream? "+hasWhippedCream+"\nAdd chocolate ? "+hasChocolate+"\nQuantity: "+quantity+"\nTotal: $"+price+"\nThank you!";
         return message;
     }
+
 }
